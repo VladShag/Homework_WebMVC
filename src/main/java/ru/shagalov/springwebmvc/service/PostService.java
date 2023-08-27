@@ -10,8 +10,11 @@ import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 @Service
 public class PostService {
-  @Autowired
+
   private PostRepository repository;
+  public PostService(PostRepository repository) {
+    this.repository = repository;
+  }
 
 
   public List<Post> all() {
